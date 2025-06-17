@@ -1,0 +1,252 @@
+asset:
+  angular_damping: 0.0
+  armature: 0.0
+  collapse_fixed_joints: True
+  default_dof_drive_mode: 3
+  density: 0.001
+  disable_gravity: False
+  file: '{LEGGED_GYM_ROOT_DIR}/resources/robots/x1/urdf/x1.urdf'
+  fix_base_link: False
+  flip_visual_attachments: False
+  foot_name: 'ankle_roll'
+  knee_name: 'knee_pitch'
+  linear_damping: 0.0
+  max_angular_velocity: 1000.0
+  max_linear_velocity: 1000.0
+  name: 'x1'
+  penalize_contacts_on: ['base_link']
+  replace_cylinder_with_capsule: False
+  self_collisions: 0
+  terminate_after_contacts_on: ['base_link']
+  thickness: 0.01
+  xml_file: '{LEGGED_GYM_ROOT_DIR}/resources/robots/x1/mjcf/xyber_x1_flat.xml'
+
+commands:
+  curriculum: true
+  gait: ['walk_omnidirectional', 'stand', 'walk_omnidirectional']
+  gait_time_range:
+    walk_sagittal: [2, 6]
+    walk_lateral: [2, 6]
+    rotate: [2, 3]
+    stand: [2, 3]
+    walk_omnidirectional: [4, 6]
+  heading_command: false
+  max_curriculum: 1.5
+  num_commands: 4
+  ranges:
+    ang_vel_yaw: [-0.6, 0.6]
+    heading: [-3.14, 3.14]
+    lin_vel_x: [-0.4, 1.2]
+    lin_vel_y: [-0.4, 0.4]
+  resampling_time: 25.0
+  stand_com_threshold: 0.05
+  sw_switch: true
+
+control:
+  action_scale: 0.5
+  control_type: 'P'
+  damping:
+    hip_pitch_joint: 3
+    hip_roll_joint: 3.0
+    hip_yaw_joint: 4
+    knee_pitch_joint: 10
+    ankle_pitch_joint: 0.5
+    ankle_roll_joint: 0.5
+  decimation: 10
+  stiffness:
+    hip_pitch_joint: 30
+    hip_roll_joint: 40
+    hip_yaw_joint: 35
+    knee_pitch_joint: 100
+    ankle_pitch_joint: 35
+    ankle_roll_joint: 35
+
+domain_rand:
+  add_dof_lag: True
+  add_dof_pos_vel_lag: False
+  add_duration: [0, 0.1, 0.2, 0.3]
+  add_ext_force: False
+  add_imu_lag: False
+  add_lag: True
+  add_update_step: 120000
+  added_link_mass_range: [0.9, 1.1]
+  added_mass_range: [-3, 3]
+  base_inertial_range: [[0.98, 1.02], [0.98, 1.02], [0.98, 1.02]]
+  com_displacement_range: [[-0.05, 0.05], [-0.05, 0.05], [-0.05, 0.05]]
+  continuous_push: False
+  damping_multiplier_range: [0.8, 1.2]
+  dof_lag_timesteps_range: [0, 40]
+  dof_pos_lag_timesteps_range: [7, 25]
+  dof_vel_lag_timesteps_range: [7, 25]
+  ext_force_interval_s: 10
+  ext_force_max_xy: 10
+  ext_force_max_z: 5
+  ext_torque_max: 0
+  friction_range: [0.2, 1.3]
+  imu_lag_timesteps_range: [1, 10]
+  joint_10_armature_range: [0.0001, 0.05]
+  joint_10_damping_range: [0.9, 1.5]
+  joint_10_friction_range: [0.5, 1.3]
+  joint_1_armature_range: [0.0001, 0.05]
+  joint_1_damping_range: [0.3, 1.5]
+  joint_1_friction_range: [0.01, 1.15]
+  joint_2_armature_range: [0.0001, 0.05]
+  joint_2_damping_range: [0.3, 1.5]
+  joint_2_friction_range: [0.01, 1.15]
+  joint_3_armature_range: [0.0001, 0.05]
+  joint_3_damping_range: [0.3, 1.5]
+  joint_3_friction_range: [0.01, 1.15]
+  joint_4_armature_range: [0.0001, 0.05]
+  joint_4_damping_range: [0.9, 1.5]
+  joint_4_friction_range: [0.5, 1.3]
+  joint_5_armature_range: [0.0001, 0.05]
+  joint_5_damping_range: [0.9, 1.5]
+  joint_5_friction_range: [0.5, 1.3]
+  joint_6_armature_range: [0.0001, 0.05]
+  joint_6_damping_range: [0.3, 1.5]
+  joint_6_friction_range: [0.01, 1.15]
+  joint_7_armature_range: [0.0001, 0.05]
+  joint_7_damping_range: [0.3, 1.5]
+  joint_7_friction_range: [0.01, 1.15]
+  joint_8_armature_range: [0.0001, 0.05]
+  joint_8_damping_range: [0.3, 1.5]
+  joint_8_friction_range: [0.01, 1.15]
+  joint_9_armature_range: [0.0001, 0.05]
+  joint_9_damping_range: [0.9, 1.5]
+  joint_9_friction_range: [0.5, 1.3]
+  joint_armature_range: [0.0001, 0.05]
+  joint_coulomb_range: [0.1, 0.9]
+  joint_damping_range: [0.3, 1.5]
+  joint_friction_range: [0.01, 1.15]
+  joint_viscous_range: [0.05, 0.1]
+  lag_timesteps_range: [5, 40]
+  link_com_displacement_range: [[-0.005, 0.005], [-0.005, 0.005], [-0.005, 0.005]]
+  link_inertial_range: [[0.98, 1.02], [0.98, 1.02], [0.98, 1.02]]
+  max_push_ang_vel: 0.2
+  max_push_force: 0.5
+  max_push_torque: 0.5
+  max_push_vel_xy: 0.2
+  motor_offset_range: [-0.035, 0.035]
+  push_duration: [0, 0.05, 0.1, 0.15, 0.2, 0.25]
+  push_force_noise: 0.5
+  push_interval_s: 4
+  push_robots: True
+  push_torque_noise: 0.5
+  randomize_base_inertia: False
+  randomize_base_mass: True
+  randomize_com: True
+  randomize_coulomb_friction: True
+  randomize_dof_lag_timesteps: True
+  randomize_dof_lag_timesteps_perstep: False
+  randomize_dof_pos_lag_timesteps: False
+  randomize_dof_pos_lag_timesteps_perstep: False
+  randomize_dof_vel_lag_timesteps: False
+  randomize_dof_vel_lag_timesteps_perstep: False
+  randomize_friction: True
+  randomize_gains: True
+  randomize_imu_lag_timesteps: True
+  randomize_imu_lag_timesteps_perstep: False
+  randomize_joint_armature: True
+  randomize_joint_armature_each_joint: False
+  randomize_joint_damping: True
+  randomize_joint_damping_each_joint: False
+  randomize_joint_friction: True
+  randomize_joint_friction_each_joint: False
+  randomize_lag_timesteps: True
+  randomize_lag_timesteps_perstep: False
+  randomize_link_com: False
+  randomize_link_inertia: False
+  randomize_link_mass: True
+  randomize_motor_offset: True
+  randomize_torque: True
+  restitution_range: [0.0, 0.4]
+  stiffness_multiplier_range: [0.8, 1.2]
+  torque_multiplier_range: [0.8, 1.2]
+  update_step: 48000
+
+env:
+  add_stand_bool: False
+  c_frame_stack: 3
+  env_spacing: 3.0
+  episode_length_s: 24
+  frame_stack: 66
+  num_actions: 12
+  num_commands: 5
+  num_envs: 4096
+  num_observations: 3102
+  num_privileged_obs: 219
+  num_single_obs: 47
+  send_timeouts: True
+  short_frame_stack: 5
+  single_linvel_index: 53
+  single_num_privileged_obs: 73
+  use_ref_actions: False
+init_state:
+  ang_vel: [0.0, 0.0, 0.0]
+  default_joint_angles:
+    left_hip_pitch_joint: 0.4
+    left_hip_roll_joint: 0.05
+    left_hip_yaw_joint: -0.31
+    left_knee_pitch_joint: 0.49
+    left_ankle_pitch_joint: -0.21
+    left_ankle_roll_joint: 0.0
+    right_hip_pitch_joint: -0.4
+    right_hip_roll_joint: -0.05
+    right_hip_yaw_joint: 0.31
+    right_knee_pitch_joint: 0.49
+    right_ankle_pitch_joint: -0.21
+    right_ankle_roll_joint: 0.0
+  lin_vel: [0.0, 0.0, 0.0]
+  pos: [0.0, 0.0, 0.7]
+  rot: [0.0, 0.0, 0.0, 1.0]
+
+push_force_noise:
+  add_noise: True
+  noise_level: 1.5
+  noise_scales:
+    ang_vel: 0.2
+    dof_pos: 0.02
+    dof_vel: 1.5
+    gravity: 0.05
+    height_measurements: 0.1
+    lin_vel: 0.1
+    quat: 0.1
+
+normalization:
+  clip_actions: 100.0
+  clip_observations: 100.0
+  obs_scales:
+    ang_vel: 1.0
+    dof_pos: 1.0
+    dof_vel: 0.05
+    height_measurements: 5.0
+    lin_vel: 2.0
+    quat: 1.0
+
+rewards:
+  base_height_target: 0.61
+  cycle_time: 0.7
+  feet_to_ankle_distance: 0.041
+  final_swing_joint_delta_pos: [0.25, 0.05, -0.11, 0.35, -0.16, 0.0, -0.25, -0.05, 0.11, 0.35, -0.16, 0.0]
+  foot_max_dist: 1.0
+  foot_min_dist: 0.2
+  max_contact_force: 700
+  only_positive_rewards: True
+  scales:
+    soft_dof_pos_limit: 0.98
+    soft_dof_vel_limit: 0.9
+    soft_torque_limit: 0.9
+    target_feet_height: 0.03
+    target_feet_height_max: 0.06
+    tracking_sigma: 5
+
+safety:
+  pos_limit: 1.0
+  torque_limit: 0.85
+  vel_limit: 1.0
+
+sim:
+  dt: 0.001
+  gravity: [0.0, 0.0, -9.81]
+  substeps: 1
+  up_axis: 1
